@@ -1,0 +1,57 @@
+<html>
+<head>
+	<title></title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+	<!-- <script src="js/easel.js"></script> -->
+	<script src="https://code.createjs.com/1.0.0/easeljs.min.js"></script>
+	<script src="https://code.createjs.com/1.0.0/tweenjs.min.js"></script>
+	<!-- <script src="js/tweenjs/Tween.js"></script> -->
+	<script src="js/QuadTree.js"></script>
+	<script src="js/pxLoader/PxLoader.js"></script>
+	<script src="js/pxLoader/PxLoaderImage.js"></script>
+
+	<script src="js/Level.js"></script>
+	<script src="js/Map.js"></script>
+	<script src="js/Tower.js"></script>
+	<script src="js/Enemie.js"></script>
+	<script src="js/Bullet.js"></script>
+	<script src="js/Game.js"></script>
+
+	<style type="text/css">
+	#canvas, #map{
+		position : absolute;
+		top:30;
+		left:30;
+	}
+	</style>
+</head>
+<body>
+<canvas id="map" width="900" height="600"></canvas>
+<canvas id="canvas" width="900" height="600">
+     Sorry your browser does not support Canvas.
+</canvas>
+<button id="btn_play">play !</button>
+<button id="btn_next">next wave</button>
+<button id="btn_tower">new tower</button>
+
+<script type="text/javascript">
+		
+		$(document).ready(function(){
+			var game = new Game();
+
+			$("#btn_play").click(function(){
+				game.run();
+			});
+			$("#btn_next").click(function(){
+				game.nextWave();
+			});
+			$("#btn_tower").click(function(){
+				game.addTower();
+			});
+		});
+
+</script>
+
+</body>
+</html>
